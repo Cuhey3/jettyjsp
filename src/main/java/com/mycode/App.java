@@ -28,6 +28,7 @@ public class App {
         // http://www.programcreek.com/java-api-examples/index.php?api=org.eclipse.jetty.webapp.WebInfConfiguration
         // Example 17
         ctx.setAttribute(WebInfConfiguration.CONTAINER_JAR_PATTERN, ".*/org\\.eclipse\\.xtext\\.web.*,.*/org.webjars.*");
+        ctx.setClassLoader(App.class.getClassLoader());
         org.eclipse.jetty.webapp.Configuration.ClassList classlist = org.eclipse.jetty.webapp.Configuration.ClassList.setServerDefault(server);
         classlist.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration", "org.eclipse.jetty.plus.webapp.EnvConfiguration", "org.eclipse.jetty.plus.webapp.PlusConfiguration");
         classlist.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration", "org.eclipse.jetty.annotations.AnnotationConfiguration");

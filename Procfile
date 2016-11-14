@@ -1,1 +1,1 @@
-web: java -jar target/jettyjsp.jar
+web: java -jar target/jettyjsp-1.0-SNAPSHOT.jar
